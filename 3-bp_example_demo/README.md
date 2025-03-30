@@ -166,6 +166,8 @@ $$w^{1000} = (0.214925, 0.379850, 0.262855, 0.375711, 0.323201, 0.396402, -1.489
 
 - 第二层：<br>
 ![matrix](images/bp-example-formula4.jpg)
+![image](https://github.com/user-attachments/assets/b4f33dd6-9c59-48d4-a4ae-7af0f36c753c)
+
 
 # 7 代码展示
 ```python
@@ -184,12 +186,12 @@ def bp_demo():
     def sigmoid_backward(out):
         return out*(1- out)
     
-    w1 = np.array([[0.1, 0.15], [0.2, 0.25], [0.3, 0.35]])
-    w2 = np.array([[0.4, 0.45, 0.5], [0.55, 0.6, 0.65]])
+    w1 = np.array([[0.1, 0.15], [0.2, 0.25], [0.3, 0.35]])#3行2列
+    w2 = np.array([[0.4, 0.45, 0.5], [0.55, 0.6, 0.65]])#2行3列
     b1 = 0.35    
     b2 = 0.65
-    input = np.array([5, 10]).reshape(2, 1)
-    label = np.array([0.01, 0.99]).reshape(2, 1)
+    input = np.array([5, 10]).reshape(2, 1)#2行1列
+    label = np.array([0.01, 0.99]).reshape(2, 1)#2行1列
     
     for i in range(100):
         net_h = w1 @ input + b1
@@ -199,9 +201,9 @@ def bp_demo():
         out_o = sigmoid(net_o)
         
         loss = np.sum((out_o - label)**2)
-        print(loss)
+        print(loss)#前向传播完成
     
-        dw2 = (out_o - label) * sigmoid_backward(out_o) @ out_h.T
+        dw2 = (out_o - label) * sigmoid_backward(out_o) @ out_h.T#
         
         # (out_o - label) * sigmoid_backward(out_o) --> dloss/net_o
         dout_h = w2.T @ ((out_o - label) * sigmoid_backward(out_o))
@@ -213,7 +215,8 @@ def bp_demo():
         print(f"loss[{i}]: {loss}")
     
     print(w1)
-    
+    print(f"w1[{i}]: {w1}")
+    print(f"w2[{i}]: {w2}")
 
 def matmul_grad():
     W = np.array([[4, 5], [7, 2]])
@@ -223,7 +226,7 @@ def matmul_grad():
     for i in range(100):
         Y = W @ X # 线性相乘
         Loss = 0.5 * np.sum((Y-label)**2) # 损失值 --> 标量
-        # dY = Y - label # 向量
+        # dY = Y - label # 向量 dloss/dy
         dW = (Y-label) @ X.T # 矩阵求导公式
         W = W - 0.01*dW # 更新weight
         print(f"============= loss[{i}]: ", Loss)
