@@ -1,4 +1,4 @@
-![�����ͼ_20250325160658](https://github.com/user-attachments/assets/ff07becf-2287-436f-aead-c965546bd9d1)# 1 概念理解
+1 概念理解
 
 ## 1.1 神经网络训练流程概述
 
