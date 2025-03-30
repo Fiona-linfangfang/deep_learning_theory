@@ -1,4 +1,4 @@
-# 1 概念理解
+![�����ͼ_20250325160658](https://github.com/user-attachments/assets/ff07becf-2287-436f-aead-c965546bd9d1)# 1 概念理解
 
 ## 1.1 神经网络训练流程概述
 
@@ -46,6 +46,11 @@ if __name__ == '__main__':
         print('loss = ', fun(x, y))
         print('x=',x)
         print('y=',y)
+note：以下为一个step，新的input到output为新的step
+1.output=model(input)#前向传播，输入x输出y
+2.loss=f(output-label)#根据output值和实际值y差值计算损失函数
+3.loss.backforward()#反向传播，以模型的权重w为变量计算损失函数的梯度值
+4.optimizer.step()#优化器更新参数w，optimizer优化器有多种，比如SGD梯度下降算法
 ```
 
 # 3 BP 或 深度神经网络训练需要明确的几个概念
