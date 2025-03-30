@@ -71,8 +71,9 @@ note：以下为一个step，新的input到output为新的step
 
 **思考： 反向传播的目的是求 激活的梯度 还是 权重的梯度 ？？？** <br>
 **思考： 我们需要同时计算出 激活的梯度 和 权重的梯度吗 ？？？** <br>
-![image](https://github.com/user-attachments/assets/33d6d84b-2a59-4cbc-8173-5398c8458c54)
-![image](https://github.com/user-attachments/assets/f77588da-1d64-459c-9b47-cb85556e1278)
+<img src="https://github.com/user-attachments/assets/33d6d84b-2a59-4cbc-8173-5398c8458c54" width="70%" alt="deepseek截图">
+<img src="https://github.com/user-attachments/assets/f77588da-1d64-459c-9b47-cb85556e1278" width="70%" alt="deepseek截图">
+
 简而言之，反向传播通过激活梯度传递误差信号，最终目的是更新权重，优化模型性能
 
 # 4 链式求导法则
