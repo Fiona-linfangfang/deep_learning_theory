@@ -60,8 +60,8 @@ note：以下为一个step，新的input到output为新的step
 
 进一步，一个深度学习模型中的所有数据可划分为如下类别：
 - 权重(weight) 或 参数(parameter)
-- 激活(activation)
-- 超参
+- 激活(activation)#input和output，比如图中的x1/a1(2)/a1(3)/最终的output
+- 超参#scalar 超参数是在开始学习过程之前设置值的参数，而不是通过训练得到的参数数据，比如学习率α
 
 **思考：请分析上图中参数的类别 ？？？**
 
@@ -71,6 +71,9 @@ note：以下为一个step，新的input到output为新的step
 
 **思考： 反向传播的目的是求 激活的梯度 还是 权重的梯度 ？？？** <br>
 **思考： 我们需要同时计算出 激活的梯度 和 权重的梯度吗 ？？？** <br>
+![image](https://github.com/user-attachments/assets/33d6d84b-2a59-4cbc-8173-5398c8458c54)
+![image](https://github.com/user-attachments/assets/f77588da-1d64-459c-9b47-cb85556e1278)
+简而言之，反向传播通过激活梯度传递误差信号，最终目的是更新权重，优化模型性能
 
 # 4 链式求导法则
 一个深度神经网络可以理解为一个复杂的复合函数：<br>
