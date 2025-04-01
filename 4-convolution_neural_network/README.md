@@ -65,6 +65,12 @@
 
 ![gif2](images/cnn-gif2.gif)
 
+[N,IC,H,W]input N: 批大小（Batch Size），即单次输入的样本数量。C: 通道数（Channels），如RGB图像的3通道。 <br>
+[OC,IC,KH,KW]weightOC输出通道数（即卷积核的数量，提取OC种不同的特征，生成OC个输出通道） IC输入通道数（必须与输入的通道数 C 一致）<br>
+[N,OC,H',W']output<br>
+对应关系：N处理图片个数input和output相同；OC:weight和output;IC:input和weight;权重维度由输出通道数OC和卷积核大小IC决定。<br>
+
+
 - 哪个是输入？其通道数：
 - 哪个是输出？其通道数：
 - 哪个是kernel？ 有几个kernel？kernel的通道数：
